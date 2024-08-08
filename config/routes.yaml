@@ -1,0 +1,26 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+robot_fight:
+    path: /robot/fight
+    controller: App\Controller\RobotController::fight
+    methods: [POST]
+
+robot_new:
+    path: /robot/new
+    controller: App\Controller\RobotController::new
+
+robot_list:
+    path: /robot
+    controller: App\Controller\RobotController::index
+
+robot_edit:
+    path: /robot/edit/{id}
+    controller: App\Controller\RobotController::edit
+
+api_robot_fight:
+    path: api/robot/fight
+    controller: App\Controller\Api\ApiRobotController::fight

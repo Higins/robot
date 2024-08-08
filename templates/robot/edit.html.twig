@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Robot list!</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="{{ asset('build/app.css') }}">
+		<script src="{{ asset('build/app.js') }}"></script>
+
+	</head>
+	<body>
+		<h1>{{ robot.name }}
+			szerkesztése</h1>
+
+		{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(form.name) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.type) }}
+			{{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(form.type) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.power) }}
+			{{ form_widget(form.power, {'attr': {'class': 'form-control'}}) }}
+			{{ form_errors(form.power) }}
+		</div>
+
+		<br>
+		{{ form_row(form.save, {'label': 'Módosítás', 'attr': {'class': 'btn btn-primary'}}) }}
+		{{ form_end(form) }}
+
+		<a href="{{ path('robot_list') }}" class="btn btn-secondary mt-3">Vissza a listához</a>
+
+	</body>
+</html>
